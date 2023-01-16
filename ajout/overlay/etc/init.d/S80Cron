@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+#         Configuration ordonnanceur
+
+start() {
+        # Lancement de crond
+        /usr/sbin/crond
+        echo "Lancement de crond"       
+        
+}
+
+init_services() {
+/etc/increment init
+}
+
+start
+
+exit 0
+

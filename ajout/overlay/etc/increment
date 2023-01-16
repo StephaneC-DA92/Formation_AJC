@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+#         Compteur avec incrémentation toutes les 5 minutes
+
+#CHEM="/home/ajc/Developpement/buildroot-2022.11/ajout/overlay/etc"
+CHEM="/etc"
+
+init(){
+count=0
+echo $count > $CHEM/counter
+printf "init\n"
+}
+
+increm(){
+d=`cat $CHEM/counter`
+#echo "Avant : $d"
+count=`expr $d + 1`
+printf "Compteur (toutes les 5 minutes) : $count \n"
+echo $count > $CHEM/counter
+}
+
+case "$1" in
+  init)
+	init
+	;;
+  up)
+	increm
+	;;
+  reset)
+	init
+	;;
+  *)
+	printf "Usage: $0 {init|up|reset}\n"
+	exit 1
+esac
+
+exit 0
+

@@ -1,0 +1,2 @@
+ajc 1000 ajc 1000 =ajc /home/ajc /bin/sh - AJC user
+stephane 1001 stephane 1001 =toto /home/stephane /bin/sh ajc Developper user

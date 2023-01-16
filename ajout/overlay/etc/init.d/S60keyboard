@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+#         Clavier français au démarrage.
+#
+
+start() {
+        # Initialisation de loadkmap
+        loadkmap < /etc/azerty.kmap
+        
+        [ ! -e Key.txt ] && touch /tmp/Key.txt # inutile
+        echo "Clavier FR" > /tmp/Key.txt # création avec >
+}
+
+start
+
+exit 0
+
